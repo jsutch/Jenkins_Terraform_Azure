@@ -1,9 +1,5 @@
 #!/bin/sh
- 
-ssh app@APP.SERVER.IP.ADDRESS <<EOF
-cd ~/hello-jenkins
-git pull
-npm install --production
-forever restartall
-exit
+
+ssh -i ~/.ssh/id_rsa deployroot@13.91.44.67 <<EOF
+uname -a
 EOF
