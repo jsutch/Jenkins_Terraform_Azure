@@ -155,7 +155,7 @@ resource "azurerm_virtual_machine" "deploy03_vm" {
     disable_password_authentication = false
     ssh_keys = [{
       path     = "/home/deployroot/.ssh/authorized_keys"
-      key_data = "${file("/var/lib/jenkins/.ssh/id_rsa.pub")}"
+      key_data = "${file("/var/jenkins_home/.ssh/id_rsa.pub")}"
     }]
   }
 
