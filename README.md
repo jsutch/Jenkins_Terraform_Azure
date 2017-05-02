@@ -1,3 +1,20 @@
-Pipeline Testing With Azure
+Synopsis
 
--deploy an Ubuntu Instance from a Terraform plan stored in Github to Azure.
+Deploy an Ubuntu Instance from a Terraform plan stored in Github to Azure.
+
+Installation
+
+Requires Jenkins 2.0, Terraform v0.9.3 or higher and the AzureRM provider for Azure 2.0
+-create jenkins job, install keys in the correct places, Git plugin, SSH plugin and some others
+-Requires credentials and App setup in Azure.
+
+Tests
+The terraform can be tested with: terraform plan azure.tf
+
+Contributors
+
+jeff.sutch@acm.org
+
+License
+
+These code samples are licensed under Attribution-ShareAlike 3.0 United States (CC BY-SA 3.0 US)
