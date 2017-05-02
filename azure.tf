@@ -187,7 +187,6 @@ resource "azurerm_virtual_machine_extension" "install" {
   settings = <<SETTINGS
     {
         "commandToExecute": "echo 'Hello, World - v.10' > index.html"
-        "commandToExecute": "nohup busybox httpd -f -p 2112&"
     }
 SETTINGS
   tags {
