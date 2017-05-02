@@ -159,16 +159,16 @@ resource "azurerm_virtual_machine" "deploy03_vm" {
     }]
   }
 
- provisioner "file" {
-    source      = "/var/jenkins_home/QWERTYFILE"
-    destination = "/var/tmp/QWERTYFILE"
+ # provisioner "file" {
+ #    source      = "/var/jenkins_home/QWERTYFILE"
+ #    destination = "/var/tmp/QWERTYFILE"
 
-    connection {
-    type     = "ssh"
-    user     = "deployroot"
-    password = "BMoxnn6LPCMt"
-    }
-  }
+ #    connection {
+ #    type     = "ssh"
+ #    user     = "deployroot"
+ #    password = "BMoxnn6LPCMt"
+ #    }
+ #  }
 
   tags {
     environment = "preprod"
