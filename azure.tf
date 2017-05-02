@@ -167,6 +167,7 @@ resource "azurerm_virtual_machine" "deploy03_vm" {
  #    type     = "ssh"
  #    user     = "deployroot"
  #    password = "BMoxnn6LPCMt"
+ #    timeout = "5m"
  #    }
  #  }
 
@@ -186,7 +187,7 @@ resource "azurerm_virtual_machine_extension" "install" {
 
   settings = <<SETTINGS
     {
-        "commandToExecute": "echo 'Hello, World - v.10' > index.html"
+        "commandToExecute": "echo 'Hello, World - v.10' > /home/deployroot/index.html"
     }
 SETTINGS
   tags {
