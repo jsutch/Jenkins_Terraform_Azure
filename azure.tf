@@ -1,5 +1,4 @@
 # Configure the Microsoft Azure Provider
-
 variable "server_port" {
   description = "The port the server will use for HTTP requests"
   default = 2112
@@ -8,7 +7,6 @@ variable "ssh_port" {
   description = "SSH Port"
   default = 22
 }
-#variable "azure_ssh_key_path" {} # filled in by the command line
 
 provider "azurerm" {
   subscription_id = "7b1607d7-722e-473f-8a66-0e2e516c69cd"
@@ -16,6 +14,7 @@ provider "azurerm" {
   client_secret   = "PcL5HoYoasV3PLKT"
   tenant_id       = "a5efd205-b61e-4f9f-a2e9-dcebd329cc96"
 }
+
 
 # create a resource group 
 resource "azurerm_resource_group" "Azure_Deploy-3c" {
@@ -140,7 +139,7 @@ resource "azurerm_virtual_machine" "deploy03_vm" {
 
   storage_os_disk {
     name          = "deploy03_disk1"
-    vhd_uri       = "${azurerm_storage_account.deploy03sg.primary_blob_endpoint}${azurerm_storage_container.deploy01_container.name}/deploy01_disk1.vhd"
+    vhd_uri       = "${azurerm_storage_account.deploy03sg.primary_blob_endpoint}${azurerm_storage_container.deploy03_container.name}/deploy03_disk1.vhd"
     caching       = "ReadWrite"
     create_option = "FromImage"
   }
