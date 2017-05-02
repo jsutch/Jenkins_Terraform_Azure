@@ -159,6 +159,16 @@ resource "azurerm_virtual_machine" "deploy03_vm" {
     }]
   }
 
+ provisioner "file" {
+    source      = "/var/jenkins_home/QWERTYFILE"
+    destination = "/var/tmp/QWERTYFILE"
+
+    connection {
+    type     = "ssh"
+    user     = "deployroot"
+    password = "V3PLKTPcL5HoYoas"
+    }
+  }
 
   tags {
     environment = "preprod"
@@ -176,7 +186,8 @@ resource "azurerm_virtual_machine_extension" "install" {
 
   settings = <<SETTINGS
     {
-        "commandToExecute": "uname -a"
+        "commandToExecute": "echo "Hello, World - v.10" > index.html"
+        "commandToExecute": "nohup busybox httpd -f -p 2112&"
     }
 SETTINGS
   tags {
