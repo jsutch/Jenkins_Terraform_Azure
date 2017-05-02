@@ -9,10 +9,10 @@ variable "ssh_port" {
 }
 
 provider "azurerm" {
-  subscription_id = "7b1607d7-722e-473f-8a66-0e2e516c69cd"
-  client_id       = "186e54d6-3200-4b01-8edd-90e8e01c75e6"
-  client_secret   = "PcL5HoYoasV3PLKT"
-  tenant_id       = "a5efd205-b61e-4f9f-a2e9-dcebd329cc96"
+  subscription_id = "${var.subscription_id}"
+  client_id       = "${var.client_id}"
+  client_secret   = "${var.client_secret}"
+  tenant_id       = "${var.tenant_id}"
 }
 
 
@@ -148,7 +148,7 @@ resource "azurerm_virtual_machine" "deploy03_vm" {
   os_profile {
     computer_name  = "deploy3000"
     admin_username = "deployroot"
-    admin_password = "V3PLKTPcL5HoYoas"
+    admin_password = "${var.admin_password}"
   }
 
   os_profile_linux_config {
