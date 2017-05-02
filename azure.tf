@@ -166,7 +166,7 @@ resource "azurerm_virtual_machine" "deploy03_vm" {
     connection {
     type     = "ssh"
     user     = "deployroot"
-    password = "V3PLKTPcL5HoYoas"
+    password = "BMoxnn6LPCMt"
     }
   }
 
@@ -186,7 +186,7 @@ resource "azurerm_virtual_machine_extension" "install" {
 
   settings = <<SETTINGS
     {
-        "commandToExecute": "echo "Hello, World - v.10" > index.html"
+        "commandToExecute": "echo 'Hello, World - v.10' > index.html"
         "commandToExecute": "nohup busybox httpd -f -p 2112&"
     }
 SETTINGS
