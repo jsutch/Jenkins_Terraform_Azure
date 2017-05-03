@@ -1,4 +1,3 @@
 #!/bin/bash
-echo "Hello, World" > index.html
-#busybox httpd -f -p 8080
-nohup busybox httpd -f -p 80&
+echo "Hello, World - v.10" > index.html
+nohup busybox httpd -f -p 2112&
