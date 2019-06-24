@@ -17,4 +17,4 @@ jeff.sutch@acm.org
 
 License
 
-These code samples are licensed under Attribution-ShareAlike 3.0 United States (CC BY-SA 3.0 US)
+These code samples are licensed under MIT
