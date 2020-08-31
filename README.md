@@ -13,7 +13,7 @@ The terraform can be tested with: terraform plan azure.tf
 
 Contributors
 
-jeff.sutch@acm.org
+jeff@collettpark.com
 
 License
 
